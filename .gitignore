@@ -1,0 +1,19 @@
+# Arquivos compilados
+*.class
+
+# Diretório de saída padrão do Eclipse
+/bin/
+
+# Configurações específicas do Eclipse
+.project
+.classpath
+.settings/
+
+# Arquivos temporários
+*.tmp
+*.bak
+*.swp
+*~
+
+# Logs
+*.log
