@@ -9,7 +9,10 @@ import java.util.Scanner;
 
 import model.entities.Employee;
 import model.enums.Department;
-import model.utils.input.InputUtils;
+import model.utils.input.DateInputUtils;
+import model.utils.input.EnumInputUtils;
+import model.utils.input.NumericInputUtils;
+import model.utils.input.StringInputUtils;
 import view.console.EmployeeMessages;
 
 public class ManageEmployeeService {
@@ -19,19 +22,23 @@ public class ManageEmployeeService {
 	
 	// Método responsável pelo cadastro de funcionários.
 	public static void registerEmployee(Scanner sc) {
-		EmployeeMessages.printEmployeeRegisterMenu(); // Exibição do menu de cadastro de funcionários.
-		Integer numOfEmployees = InputUtils.readNumOfEmployees(sc); // Captura do número de cadastros a serem realizados por operação.
+		
+		// Exibição do menu de cadastro de funcionários.
+		EmployeeMessages.printEmployeeRegisterMenu();
+		
+		// Captura do número de cadastros a serem realizados por operação, sendo 0 o mínimo e 5 o máximo de cadastros por operação.
+		Integer numOfEmployees = NumericInputUtils.readIntegerInRange("Quantos funcionários deseja cadastrar?: ", sc, 0, 5);
 		
 		// Loop for para controlar a quantidade de registros simultâneos.
 		for(int i=0; i<numOfEmployees; i++) {
 			System.out.printf("Registro do %dº funcionário:%n%n", i+1); // Exibição do número do registro em execução.
 			
 			// Coleta dos dados do funcionário. "Dados básicos apenas para fins didáticos".
-			String name = InputUtils.readName(sc);
-			Department department = InputUtils.readDepartment(sc);
-			String email = InputUtils.readEmail(sc);
-			LocalDate birthDate = InputUtils.readDate("Data de nascimento: ", sc);
-			LocalDate hireDate = InputUtils.readDate("Data de contratação: ", sc);
+			String name = StringInputUtils.readName(sc);
+			Department department = EnumInputUtils.readDepartment(sc);
+			String email = StringInputUtils.readEmail(sc);
+			LocalDate birthDate = DateInputUtils.readDate("Data de nascimento: ", sc);
+			LocalDate hireDate = DateInputUtils.readDate("Data de contratação: ", sc);
 			
 			Employee employee = new Employee(name, department, email, birthDate, hireDate); // Criação do objeto funcionário.
 			
@@ -42,7 +49,5 @@ public class ManageEmployeeService {
 		}
 		EmployeeMessages.printEmployeeRegisteredMessage(); // Exibição da confirmação de cadastro dos funcionários.
 	}
-	
-	
 	
 }
