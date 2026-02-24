@@ -2,21 +2,22 @@
 
 package model.entities;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Product {
 	
 	// Atributos.
+	private static Integer nextId = 1; // Contador estático para gerar IDs automaticamente.
 	private Integer id;
 	private String name;
 	private String description;
 	private Integer quantity;
-	private LocalDate entryDate;
+	private LocalDateTime entryDate;
 	private Double value;
 	
 	// Construtor.
-	public Product(Integer id, String name, String description, Integer quantity, LocalDate entryDate, Double value) {
-		this.id = id;
+	public Product(String name, String description, Integer quantity, LocalDateTime entryDate, Double value) {
+		this.id = nextId++; // Atribui o próximo ID e incrementa o contador.
 		this.name = name;
 		this.description = description;
 		this.quantity = quantity;
@@ -27,10 +28,6 @@ public class Product {
 	// Getters e Setters.
 	public Integer getId() {
 		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getName() {
@@ -57,11 +54,11 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	public LocalDate getEntryDate() {
+	public LocalDateTime getEntryDate() {
 		return entryDate;
 	}
 
-	public void setEntryDate(LocalDate entryDate) {
+	public void setEntryDate(LocalDateTime entryDate) {
 		this.entryDate = entryDate;
 	}
 

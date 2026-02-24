@@ -9,6 +9,9 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
+import model.services.ManageEmployeeService;
+import view.console.SystemMenuMessages;
+
 public class Program {
 
 	public static void main(String[] args) {
@@ -16,7 +19,8 @@ public class Program {
 		Locale.setDefault(Locale.US); // Define o uso de ponto como separador decimal.
 		Scanner sc = new Scanner(System.in);
 		
-		
+		SystemMenuMessages.printStartMenu();
+		ManageEmployeeService.registerEmployee(sc);
 		
 		sc.close();
 	}
