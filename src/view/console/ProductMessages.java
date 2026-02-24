@@ -12,12 +12,13 @@ public final class ProductMessages {
 	    System.out.println("=============================================================================================");
 	    System.out.println();
 	    System.out.println("Opções disponíveis:");
-	    System.out.println("- Cadastrar produto");
-	    System.out.println("- Dar baixa em produto");
-	    System.out.println("- Consultar itens cadastrados");
-	    System.out.println("- Ver quantidade total e valor total em estoque");
-	    System.out.println("- Voltar ao menu principal");
+	    System.out.println("(1) Cadastrar produto");
+	    System.out.println("(2) Dar baixa em produto");
+	    System.out.println("(3) Consultar itens cadastrados");
+	    System.out.println("(4) Ver quantidade total e valor total em estoque");
+	    System.out.println("(5) Voltar ao menu principal");
 	    System.out.println("=============================================================================================");
+	    System.out.println();
 	}
 	
 	// Método responsável pela exibição do menu de cadastro de produtos.
@@ -28,6 +29,23 @@ public final class ProductMessages {
 	    System.out.println();
 	    System.out.println("Informe os dados necessários:");
 	    System.out.println("=============================================================================================");
+	    System.out.println();
+	}
+	
+	// Método responsável por exibir mensagem quando não existem produtos cadastrados.
+	public static void printNoProductsMessage() {
+	    System.out.println("=============================================================================================");
+	    System.out.println("                              Nenhum Produto Cadastrado                                      ");
+	    System.out.println("=============================================================================================");
+	    System.out.println();
+	}
+	
+	// Método responsável por exibir mensagem antes da lista de produtos cadastrados.
+	public static void printProductListHeader() {
+	    System.out.println("=============================================================================================");
+	    System.out.println("                           Lista de Produtos Cadastrados                                     ");
+	    System.out.println("=============================================================================================");
+	    System.out.println();
 	}
 	
 	// Método responsável por exibir a mensagem confirmando o cadastro de produto.

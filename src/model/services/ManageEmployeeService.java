@@ -50,4 +50,17 @@ public class ManageEmployeeService {
 		EmployeeMessages.printEmployeeRegisteredMessage(); // Exibição da confirmação de cadastro dos funcionários.
 	}
 	
+	// Método responsável pela exibição dos funcionários cadastrados.
+	public static void printRegisteredEmployees() {
+		if(employees.isEmpty()) {
+			EmployeeMessages.printNoEmployeesMessage();
+		}
+		else {
+			EmployeeMessages.printEmployeeListHeader();
+			for(Employee items : employees) {
+				System.out.println(items);
+			}
+		}
+	}
+	
 }

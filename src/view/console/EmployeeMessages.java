@@ -12,10 +12,11 @@ public final class EmployeeMessages {
 	    System.out.println("=============================================================================================");
 	    System.out.println();
 	    System.out.println("Opções disponíveis:");
-	    System.out.println("- Cadastrar novo funcionário");
-	    System.out.println("- Consultar lista de funcionários");
-	    System.out.println("- Voltar ao menu principal");
+	    System.out.println("(1) Cadastrar novo funcionário");
+	    System.out.println("(2) Consultar lista de funcionários");
+	    System.out.println("(3) Voltar ao menu principal");
 	    System.out.println("=============================================================================================");
+	    System.out.println();
 	}
 	
 	// Método responsável pela exibição do menu de cadastro de funcionários.
@@ -26,6 +27,23 @@ public final class EmployeeMessages {
 	    System.out.println();
 	    System.out.println("Informe os dados necessários:");
 	    System.out.println("=============================================================================================");
+	    System.out.println();
+	}
+	
+	// Método responsável por exibir mensagem quando não existem funcionários cadastrados.
+	public static void printNoEmployeesMessage() {
+	    System.out.println("=============================================================================================");
+	    System.out.println("                          Nenhum Funcionário Cadastrado                                      ");
+	    System.out.println("=============================================================================================");
+	    System.out.println();
+	}
+	
+	// Método responsável por exibir mensagem antes da lista de funcionários cadastrados.
+	public static void printEmployeeListHeader() {
+	    System.out.println("=============================================================================================");
+	    System.out.println("                           Lista de Funcionários Cadastrados                                 ");
+	    System.out.println("=============================================================================================");
+	    System.out.println();
 	}
 	
 	// Método responsável por exibir a confirmação de cadastro de funcionário.

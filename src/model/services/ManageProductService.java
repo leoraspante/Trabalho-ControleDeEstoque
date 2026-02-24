@@ -47,4 +47,16 @@ public class ManageProductService {
 		ProductMessages.printProductRegisteredMessage(); // Exibição da confirmação de cadastro dos produtos.
 	}
 	
+	// Método responsável pela exibição dos produtos cadastrados.
+	public static void printRegisteredEmployees() {
+		if(products.isEmpty()) {
+			ProductMessages.printNoProductsMessage();
+		}
+		else {
+			ProductMessages.printProductListHeader();
+			for(Product items : products) {
+				System.out.println(items);
+			}
+		}
+	}
 }
