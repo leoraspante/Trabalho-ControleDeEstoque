@@ -5,8 +5,6 @@ package model.services;
 import java.util.Scanner;
 
 import model.utils.input.NumericInputUtils;
-import view.console.EmployeeMessages;
-import view.console.ProductMessages;
 import view.console.SystemMenuMessages;
 
 public final class ManageSystemService {
@@ -25,7 +23,7 @@ public final class ManageSystemService {
 				break;
 			case 2:
 				// Case 2: Responsável pelo gerenciamento de produtos e estoque.
-				manageProductSystem(sc);
+				ManageProductService.productMenuSystem(sc);
 				break;
 			case 3:
 				//Case 3: Responsável pelo gerenciamento de relatórios.
