@@ -50,6 +50,29 @@ public class ManageEmployeeService {
 		EmployeeMessages.printEmployeeRegisteredMessage(); // Exibição da confirmação de cadastro dos funcionários.
 	}
 	
+	// Método responsável pela navegação no menu de funcionários.
+	public static void employeeMenuSystem(Scanner sc) {
+		while(true) {
+			EmployeeMessages.printEmployeeMenu();
+			
+			// Implementação de um switch-case controlando a navegação entre as opções do menu de funcionário.
+			// Valores aceitos desde 1 até 3, coincidindo com as opções disponíveis no menu de cadastro de funcionários.
+			switch (NumericInputUtils.readIntegerInRange("Informe a opção desejada: ", sc, 1, 3)) {
+			case 1:
+				// Case 1: Responsável pelo cadastro de funcionários.
+				ManageEmployeeService.registerEmployee(sc);
+				break;
+			case 2:
+				// Case 2: Responsável por listar funcionários cadastrados.
+				ManageEmployeeService.printRegisteredEmployees();
+				break;
+			case 3:
+				// Case 3: Responsável por retornar ao menu inicial.
+				return;	
+			}
+		}
+	}
+	
 	// Método responsável pela exibição dos funcionários cadastrados.
 	public static void printRegisteredEmployees() {
 		if(employees.isEmpty()) {

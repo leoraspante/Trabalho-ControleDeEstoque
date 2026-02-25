@@ -21,12 +21,14 @@ public final class ManageSystemService {
 			switch (NumericInputUtils.readIntegerInRange("Informe a opção desejada: ", sc, 1, 4)) {
 			case 1:
 				// Case 1: Responsável pelo gerenciamento de funcionários.
-				manageEmployeeSystem(sc);
+				ManageEmployeeService.employeeMenuSystem(sc);
 				break;
 			case 2:
-				// Implementar gerenciamento de produtos e estoque.
+				// Case 2: Responsável pelo gerenciamento de produtos e estoque.
+				manageProductSystem(sc);
 				break;
 			case 3:
+				//Case 3: Responsável pelo gerenciamento de relatórios.
 				// Implementar gerenciamento de relatórios.
 				break;
 			case 4:
@@ -37,58 +39,8 @@ public final class ManageSystemService {
 		}
 	}
 	
-	// Método responsável pela navegação no menu de funcionários.
-	public static void manageEmployeeSystem(Scanner sc) {
-		while(true) {
-			EmployeeMessages.printEmployeeMenu();
-			
-			// Implementação de um switch-case controlando a navegação entre as opções do menu de funcionário.
-			// Valores aceitos desde 1 até 3, coincidindo com as opções disponíveis no menu de cadastro de funcionários.
-			switch (NumericInputUtils.readIntegerInRange("Informe a opção desejada: ", sc, 1, 3)) {
-			case 1:
-				// Case 1: Responsável pelo cadastro de funcionários.
-				ManageEmployeeService.registerEmployee(sc);
-				break;
-			case 2:
-				// Case 2: Responsável por listar funcionários cadastrados.
-				ManageEmployeeService.printRegisteredEmployees();
-				break;
-			case 3:
-				// Case 3: Responsável por retornar ao menu inicial.
-				return;	
-			}
-		}
-	}
 	
-	// Método responsável pela navegação no menu de produtos.
-	public static void manageProductSystem(Scanner sc) {
-		while(true) {
-			ProductMessages.printInventoryMenu();
-			
-			// Implementação de um switch-case controlando a navegação entre as opções do menu de estoque.
-			// Valores aceitos desde 1 até 5, coincidindo com as opções disponíveis no menu de estoque.
-			switch (NumericInputUtils.readIntegerInRange("Informe a opção desejada: ", sc, 1, 5)) {
-			case 1:
-				// Case 1: Responsável pelo cadastro de produtos.
-				ManageProductService.registerProduct(sc);
-				break;
-			case 2:
-				// Case 2: Responsável pela baixa de produtos.
-				// Implementar.
-				break;
-			case 3:
-				// Case 3: Responsável pela consulta dos itens no estoque.
-				// Implementar.
-				break;
-			case 4:
-				// Case 4: Responsável por uma consulta mais detalhada ao estoque, informando valores totais armazenados.
-				// Implementar.
-				break;
-			case 5:
-				// Case 5: Responsável por retornar ao menu inicial.
-				return;	
-			}
-		}
-	}
+	
+	
 	
 }

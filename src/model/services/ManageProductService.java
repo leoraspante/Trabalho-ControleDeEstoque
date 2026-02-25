@@ -47,8 +47,39 @@ public class ManageProductService {
 		ProductMessages.printProductRegisteredMessage(); // Exibição da confirmação de cadastro dos produtos.
 	}
 	
+	// Método responsável pela navegação no menu de produtos.
+	public static void productMenuSystem(Scanner sc) {
+		while(true) {
+			ProductMessages.printInventoryMenu();
+			
+			// Implementação de um switch-case controlando a navegação entre as opções do menu de estoque.
+			// Valores aceitos desde 1 até 5, coincidindo com as opções disponíveis no menu de estoque.
+			switch (NumericInputUtils.readIntegerInRange("Informe a opção desejada: ", sc, 1, 5)) {
+			case 1:
+				// Case 1: Responsável pelo cadastro de produtos.
+				ManageProductService.registerProduct(sc);
+				break;
+			case 2:
+				// Case 2: Responsável pela baixa de produtos.
+				// Implementar.
+				break;
+			case 3:
+				// Case 3: Responsável pela consulta dos itens no estoque.
+				ManageProductService.printRegisteredProducts();
+				break;
+			case 4:
+				// Case 4: Responsável por uma consulta mais detalhada ao estoque, informando valores totais armazenados.
+				// Implementar.
+				break;
+			case 5:
+				// Case 5: Responsável por retornar ao menu inicial.
+				return;	
+			}
+		}
+	}
+	
 	// Método responsável pela exibição dos produtos cadastrados.
-	public static void printRegisteredEmployees() {
+	public static void printRegisteredProducts() {
 		if(products.isEmpty()) {
 			ProductMessages.printNoProductsMessage();
 		}
