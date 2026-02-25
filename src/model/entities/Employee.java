@@ -3,6 +3,7 @@
 package model.entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import model.enums.Department;
 
@@ -75,10 +76,14 @@ public class Employee {
 	// toString personalizado.
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", department=" + department + ", email=" + email
-				+ ", birthDate=" + birthDate + ", hireDate=" + hireDate + "]";
+		
+		// Formato para exibição de data.
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
+		
+		// StringBuider formatando a exibição da lista.
+		StringBuilder sb = new StringBuilder();
+		sb.append(String.format("%-5s | %-35s | %-35s | %-20s | %-20s | %-15s", id, name, email, birthDate.format(fmt), department, hireDate.format(fmt)));
+		return sb.toString();
 	}
-	
-	
 	
 }

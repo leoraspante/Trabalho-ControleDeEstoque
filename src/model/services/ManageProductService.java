@@ -33,6 +33,7 @@ public class ManageProductService {
 			
 			// Coleta dos dados do produto. "Dados básicos apenas para fins didáticos".
 			String name = StringInputUtils.readProductName(sc);
+			System.out.print("Descrição: ");
 			String description = sc.nextLine().trim();
 			Integer quantity = NumericInputUtils.readIntegerInRange("Quantidade: ", sc , 1, 5000); // Mínimo de 1 item e máximo de 5000 itens.
 			LocalDateTime entryDate = DateInputUtils.getCurrentDateTime(); // Realiza automaticamente o registro de data/hora no ato do cadastro do produto.

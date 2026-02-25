@@ -6,7 +6,7 @@ package view.console;
 public final class EmployeeMessages {
 
     // Separador padronizado.
-    private static final String SEPARATOR = "==============================================================================================================";
+    private static final String SEPARATOR = "================================================================================================================================================";
 
     // Menu de gerenciamento de funcionários
     public static void printEmployeeMenu() {
@@ -46,6 +46,8 @@ public final class EmployeeMessages {
         System.out.println(SEPARATOR);
         System.out.println("                                     Lista de Funcionários Cadastrados                                 ");
         System.out.println(SEPARATOR);
+        System.out.printf("%-5s | %-35s | %-35s | %-20s | %-20s | %-15s%n", "ID", "Nome", "Email", "Data de Nascimento", "Departamento", "Contatação");
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println();
     }
 

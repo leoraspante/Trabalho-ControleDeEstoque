@@ -36,6 +36,7 @@ public final class NumericInputUtils {
 			try {
 				System.out.print(msg);
 				double value = sc.nextDouble();
+				sc.nextLine();
 				if(value < minAllowed) {
 					System.out.printf("Valor inválido, tente novamente.%n");
 					System.out.printf("Valor mínimo permitido: %d.%n%n", minAllowed);

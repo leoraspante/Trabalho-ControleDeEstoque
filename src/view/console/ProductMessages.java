@@ -6,7 +6,7 @@ package view.console;
 public final class ProductMessages {
 
 	// Separador padronizado.
-    private static final String SEPARATOR = "==============================================================================================================";
+    private static final String SEPARATOR = "================================================================================================================================================";
 
     // Menu de estoque
     public static void printInventoryMenu() {
@@ -48,6 +48,8 @@ public final class ProductMessages {
         System.out.println(SEPARATOR);
         System.out.println("                                     Lista de Produtos Cadastrados                                 ");
         System.out.println(SEPARATOR);
+        System.out.printf("%-5s | %-25s | %-35s | %-15s | %-20s | %-10s%n", "ID", "Nome", "Descrição", "Quantidade", "Data de entrada", "Valor R$");
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println();
     }
 

@@ -27,7 +27,7 @@ public class ManageEmployeeService {
 		EmployeeMessages.printEmployeeRegisterMenu();
 		
 		// Captura do número de cadastros a serem realizados por operação, sendo 0 o mínimo e 5 o máximo de cadastros por operação.
-		Integer numOfEmployees = NumericInputUtils.readIntegerInRange("Quantos funcionários deseja cadastrar?: ", sc, 0, 5);
+		Integer numOfEmployees = NumericInputUtils.readIntegerInRange("Quantos funcionários deseja cadastrar ?: ", sc, 0, 5);
 		
 		// Loop for para controlar a quantidade de registros simultâneos.
 		for(int i=0; i<numOfEmployees; i++) {

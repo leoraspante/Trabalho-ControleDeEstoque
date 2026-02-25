@@ -6,7 +6,7 @@ package view.console;
 public final class SystemMenuMessages {
 
 	// Separador padronizado.
-    private static final String SEPARATOR = "==============================================================================================================";
+    private static final String SEPARATOR = "================================================================================================================================================";
 
     // Menu inicial do sistema
     public static void printStartMenu() {

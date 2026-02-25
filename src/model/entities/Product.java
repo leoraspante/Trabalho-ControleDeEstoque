@@ -3,6 +3,7 @@
 package model.entities;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Product {
 	
@@ -70,11 +71,17 @@ public class Product {
 		this.value = value;
 	}
 
-	// toString padrão.
+	// toString personalizado.
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", quantity=" + quantity
-				+ ", entryDate=" + entryDate + ", value=" + value + "]";
+		
+		// Formato para exibição de data.
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"); 
+		
+		// StringBuider formatando a exibição da lista.
+		StringBuilder sb = new StringBuilder();
+		sb.append(String.format("%-5s | %-25s | %-35s | %-15s | %-20s | %-10.2f", id, name, description, quantity, entryDate.format(fmt), value));
+		return sb.toString();
 	}
 	
 	
