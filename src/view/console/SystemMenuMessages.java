@@ -1,3 +1,5 @@
+// Classe responsável pela exibição de mensagens pertinentes a operações no menu principal.
+
 package view.console;
 
 public final class SystemMenuMessages {

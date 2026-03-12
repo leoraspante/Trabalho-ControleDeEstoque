@@ -1,3 +1,5 @@
+// Classe responsável pela exibição de mensagens pertinentes a operações de estoque.
+
 package view.console;
 
 public final class StockOperationMessages {

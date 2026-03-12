@@ -17,28 +17,24 @@ public final class ManageSystemService {
 			// Implementação de um switch-case controlando a navegação entre as opções do sistema.
 			// Valores aceitos desde 1 até 4, coincidindo com as opções disponíveis no menu inicial.
 			switch (NumericInputUtils.readIntegerInRange("Informe a opção desejada: ", sc, 1, 4)) {
-			case 1:
-				// Case 1: Responsável pelo gerenciamento de funcionários.
+			
+			case 1: // Responsável pelo gerenciamento de funcionários.
 				ManageEmployeeService.employeeMenuSystem(sc);
 				break;
-			case 2:
-				// Case 2: Responsável pelo gerenciamento de produtos e estoque.
+				
+			case 2: // Responsável pelo gerenciamento de produtos e estoque.
 				ManageProductService.productMenuSystem(sc);
 				break;
-			case 3:
-				//Case 3: Responsável pelo gerenciamento de relatórios.
-				// Implementar gerenciamento de relatórios.
+				
+			case 3: // Responsável pelo gerenciamento de relatórios.
+				ManageOperationService.detailedStockConsultation();
 				break;
-			case 4:
-				// Case 4: Responsável pelo encerramento do sistema.
+				
+			case 4: // Encerramento do sistema.
 				SystemMenuMessages.printSystemExitMessage();
 				return;					
 			}
 		}
 	}
-	
-	
-	
-	
 	
 }

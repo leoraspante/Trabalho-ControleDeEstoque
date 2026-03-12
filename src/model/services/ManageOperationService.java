@@ -1,3 +1,5 @@
+// Classe responsável pela consolidação dos métodos responsáveis pelas operações no estoque
+
 package model.services;
 
 import java.util.ArrayList;
@@ -11,18 +13,17 @@ public final class ManageOperationService {
 	// Lista armazenando as operações realizadas no estoque.
 	public static final List<StockOperation> stockOperations = new ArrayList<>();
 	
-	// Método responsável pela exibição das movimentações realizadas no estoque.
-	public static void printStockOperations() {
-		if(stockOperations.isEmpty()) {
-			StockOperationMessages.printNoOperationsMessage();
-		}
-		else {
-			StockOperationMessages.printOperationsListHeader();
-			for(StockOperation items : stockOperations) {
-				System.out.println(items);
-			}
-		}
+	// Método responsável pela consulta detalhada ao estoque.
+	public static void detailedStockConsultation() {
+	    if (stockOperations.isEmpty()) {
+	    	StockOperationMessages.printNoOperationsMessage();
+	        return;
+	    }
+
+	    StockOperationMessages.printOperationsListHeader();
+	    for (StockOperation op : stockOperations) {
+	        System.out.println(op);
+	    }
 	}
-	
 
 }

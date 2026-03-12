@@ -39,7 +39,6 @@ public final class NumericInputUtils {
 //=================================================================================================================================================================//	
 	
 	// Método responsável pela leitura e validação de ID's de funcionários para atualização de cadastro.
-	
 	private static List<Employee> employees = ManageEmployeeService.employees;
 	
 	public static Integer readEmployeeId(Scanner sc) {
@@ -110,7 +109,5 @@ public final class NumericInputUtils {
 			}
 		}
 	}
-	
-//=================================================================================================================================================================//	
 	
 }

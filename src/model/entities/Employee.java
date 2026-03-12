@@ -17,7 +17,7 @@ public class Employee {
 	private String email;
 	private LocalDate birthDate;
 	private LocalDate hireDate;
-	
+
 	// Construtor.
 	public Employee(String name, Department department, String email, LocalDate birthDate, LocalDate hireDate) {
 		this.id = nextId++; // Atribui o próximo ID e incrementa o contador.
@@ -76,14 +76,24 @@ public class Employee {
 	// toString personalizado.
 	@Override
 	public String toString() {
-		
+
 		// Formato para exibição de data.
-		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
-		
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
 		// StringBuider formatando a exibição da lista.
 		StringBuilder sb = new StringBuilder();
-		sb.append(String.format("%-5s | %-35s | %-35s | %-20s | %-20s | %-15s", id, name, email, birthDate.format(fmt), department, hireDate.format(fmt)));
+		
+		sb.append(String.format(
+				"%-5s | %-35s | %-35s | %-20s | %-20s | %-15s",
+				id, 						// ID do funcionário.
+				name,						// Nome do funcionário.
+				email,						// Email do funcionário.
+				birthDate.format(fmt),		// Data de nascimento.
+				department,					// Departamento.
+				hireDate.format(fmt)		// Data de contratação.
+		));
+		
 		return sb.toString();
 	}
-	
+
 }

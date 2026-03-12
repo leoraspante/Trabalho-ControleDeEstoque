@@ -13,6 +13,8 @@ public final class DateInputUtils {
 	
 	// Definição do formato de data.
 	private static DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
+
+//=================================================================================================================================================================//	
 	
 	// Método responsável pela leitura e validação de datas.
 	public static LocalDate readDate(String msg, Scanner sc) {
@@ -27,7 +29,9 @@ public final class DateInputUtils {
 			}
 		}
 	}
-		
+
+//=================================================================================================================================================================//	
+	
 	// Método responsável pela captura atual de data/hora no formato dd/MM/yyyy HH:mm:ss.
 	public static LocalDateTime getCurrentDateTime() {
 		LocalDateTime value = LocalDateTime.now();

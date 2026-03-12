@@ -130,54 +130,53 @@ public class ManageEmployeeService {
 				continue;
 			}	
 			
-			
 			// Menu de edição do funcionário encontrado.
 			switch (NumericInputUtils.readIntegerInRange("Informe a opção desejada: ", sc, 1, 6)) {
-				case 1:
-					// Case 1: Responsável pela alteração de nome.
-					String newName = StringInputUtils.readName(sc);
-					employeeToEdit.setName(newName);
-					System.out.printf("Nome atualizado!%nDados atuais:%n%n");
-					System.out.println(employeeToEdit);
-					System.out.println();
-					break;
-				case 2:
-					// Case 2: Responsável pela alteração de email.
-					String newEmail = StringInputUtils.readEmail(sc);
-					employeeToEdit.setEmail(newEmail);
-					System.out.printf("Email atualizado!%nDados atuais:%n%n");
-					System.out.println(employeeToEdit);
-					System.out.println();
-					break;
-				case 3:
-					// Case 3: Responsável pela alteração de departamento.
-					Department newDepartment = EnumInputUtils.readDepartment(sc);
-					employeeToEdit.setDepartment(newDepartment);
-					System.out.printf("Departamento atualizado!%nDados atuais:%n%n");
-					System.out.println(employeeToEdit);
-					System.out.println();
-					break;
-				case 4:
-					// Case 4: Responsável pela alteração da data de nascimento.
-					LocalDate newBirthDate = DateInputUtils.readDate("Data de nascimento: ", sc);
-					employeeToEdit.setBirthDate(newBirthDate);
-					System.out.printf("Data de nascimento atualizada!%nDados atuais:%n%n");
-					System.out.println(employeeToEdit);
-					System.out.println();
-					break;
-				case 5:
-					// Case 5: Responsável pela alteração da data de contratação.
-					LocalDate newHireDate = DateInputUtils.readDate("Data de contratação: ", sc);
-					employeeToEdit.setHireDate(newHireDate);
-					System.out.printf("Data de contratação atualizada!%nDados atuais:%n%n");
-					System.out.println(employeeToEdit);
-					System.out.println();
-					break;
-				case 6:
-					return;
+				
+			case 1:	// Responsável pela alteração de nome.
+				String newName = StringInputUtils.readName(sc);
+				employeeToEdit.setName(newName);
+				System.out.printf("Nome atualizado!%nDados atuais:%n%n");
+				System.out.println(employeeToEdit);
+				System.out.println();
+				break;
+					
+			case 2: // Responsável pela alteração de email.
+				String newEmail = StringInputUtils.readEmail(sc);
+				employeeToEdit.setEmail(newEmail);
+				System.out.printf("Email atualizado!%nDados atuais:%n%n");
+				System.out.println(employeeToEdit);
+				System.out.println();
+				break;
+				
+			case 3: // Responsável pela alteração de departamento.
+				Department newDepartment = EnumInputUtils.readDepartment(sc);
+				employeeToEdit.setDepartment(newDepartment);
+				System.out.printf("Departamento atualizado!%nDados atuais:%n%n");
+				System.out.println(employeeToEdit);
+				System.out.println();
+				break;
+				
+			case 4: // Responsável pela alteração da data de nascimento.
+				LocalDate newBirthDate = DateInputUtils.readDate("Data de nascimento: ", sc);
+				employeeToEdit.setBirthDate(newBirthDate);
+				System.out.printf("Data de nascimento atualizada!%nDados atuais:%n%n");
+				System.out.println(employeeToEdit);
+				System.out.println();
+				break;
+				
+			case 5: // Responsável pela alteração da data de contratação.
+				LocalDate newHireDate = DateInputUtils.readDate("Data de contratação: ", sc);
+				employeeToEdit.setHireDate(newHireDate);
+				System.out.printf("Data de contratação atualizada!%nDados atuais:%n%n");
+				System.out.println(employeeToEdit);
+				System.out.println();
+				break;
+				
+			case 6: // Retona ao menu anterior.
+				return;
 			}
 		}
 	}
-	
 	
 }

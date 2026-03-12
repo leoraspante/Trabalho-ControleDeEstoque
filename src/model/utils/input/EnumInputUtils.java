@@ -25,6 +25,8 @@ public final class EnumInputUtils {
 			}
 		}
 	}
+
+//=================================================================================================================================================================//
 	
 	// Método responsável pela leitura e validação das operações disponíveis no estoque.
 	public static OperationType readOperationType (Scanner sc) {

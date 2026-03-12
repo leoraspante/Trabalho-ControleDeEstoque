@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 import model.enums.OperationType;
 
 public class StockOperation {
-	
+
 	// Atributos.
 	private static Integer nextId = 1; // Contador estático para gerar IDs automaticamente.
 	private Integer id;
@@ -16,9 +16,9 @@ public class StockOperation {
 	private OperationType operation;
 	private Integer quantityChanged;
 	private Double priceChanged;
-	private Employee employee; // Não utilizado por enquanto. AJUSTAR!!
+	private Employee employee; // Não utilizado por enquanto. (A ser implementado, para registro do responsável pela movimentação).
 	private LocalDateTime operationTime;
-	
+
 	// Construtor para cadastro
 	public StockOperation(Product product, OperationType operation) {
 		this.id = nextId++; // Atribui o próximo ID e incrementa o contador.
@@ -26,16 +26,16 @@ public class StockOperation {
 		this.operation = operation;
 		this.operationTime = LocalDateTime.now();
 	}
-	
+
 	// Construtor para ajuste de quantidade
 	public StockOperation(Product product, OperationType operation, Integer quantityChanged) {
 		this.id = nextId++; // Atribui o próximo ID e incrementa o contador.
 		this.product = product;
 		this.operation = operation;
 		this.operationTime = LocalDateTime.now();
-		this.quantityChanged = quantityChanged;			
+		this.quantityChanged = quantityChanged;
 	}
-	
+
 	// Construtor para ajuste de preço
 	public StockOperation(Product product, OperationType operation, Double priceChanged) {
 		this.id = nextId++; // Atribui o próximo ID e incrementa o contador.
@@ -44,7 +44,6 @@ public class StockOperation {
 		this.operationTime = LocalDateTime.now();
 		this.priceChanged = priceChanged;
 	}
-	
 
 	// Getters e Setters.
 	public Product getProduct() {
@@ -62,11 +61,11 @@ public class StockOperation {
 	public void setOperation(OperationType operation) {
 		this.operation = operation;
 	}
-	
+
 	public void setQuantityChanged(Integer quantityChanged) {
 		this.quantityChanged = quantityChanged;
 	}
-	
+
 	public Integer getQuantityChanged() {
 		return quantityChanged;
 	}
@@ -74,11 +73,11 @@ public class StockOperation {
 	public void setPriceChanged(Double priceChanged) {
 		this.priceChanged = priceChanged;
 	}
-	
+
 	public Double getPriceChanged() {
 		return priceChanged;
 	}
-	
+
 	public Employee getEmployee() {
 		return employee;
 	}
@@ -94,27 +93,26 @@ public class StockOperation {
 	// toString personalizado.
 	@Override
 	public String toString() {
-		
+
 		// Formato para exibição de data.
-		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"); 
-		
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
 		// StringBuider formatando a exibição da lista.
 		StringBuilder sb = new StringBuilder();
-		
+
 		sb.append(String.format(
-			"%-5s | %-20s | %-10s | %-10s | %-20s | %-15s | %-15s | %-12.2f",
-			id,																			// ID da operação.
-			product.getName(),															// Nome do produto.
-			operation,																	// Tipo de operação (CADASTRO, BAIXA, AJUSTE).
-			product.getQuantity(),														// Estoque atual após operação.
-			operationTime.format(fmt),													// Data/Hora da operação.
-			(quantityChanged != null ? quantityChanged : "-"),							// Quantidade movimentada.
-			(priceChanged != null ? String.format("R$ %.2f", priceChanged) : "-"),		// Preço alterado.
-			product.getValue()*product.getQuantity()									// Valor total atual em estoque.
+				"%-5s | %-20s | %-10s | %-10s | %-20s | %-15s | %-15s | %-12.2f", 
+				id, 																		// ID da operação.
+				product.getName(), 															// Nome do produto.
+				operation, 																	// Tipo de operação (CADASTRO, BAIXA, AJUSTE).
+				product.getQuantity(), 														// Estoque atual após operação.
+				operationTime.format(fmt), 													// Data/Hora da operação.
+				(quantityChanged != null ? quantityChanged : "-"), 							// Quantidade movimentada.
+				(priceChanged != null ? String.format("R$ %.2f", priceChanged) : "-"),		// Preço alterado.
+				product.getValue() * product.getQuantity() 									// Valor total atual em estoque.
 		));
-		
+
 		return sb.toString();
 	}
-	
 
 }

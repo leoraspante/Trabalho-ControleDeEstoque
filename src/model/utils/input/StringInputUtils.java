@@ -24,6 +24,8 @@ public final class StringInputUtils {
 		}
 	}
 	
+//=================================================================================================================================================================//	
+	
 	// Método responsável pela leitura e validação de nomes de produtos.
 	public static String readProductName(Scanner sc) {
 		while(true) {
@@ -40,6 +42,8 @@ public final class StringInputUtils {
 			}
 		}
 	}
+	
+//=================================================================================================================================================================//	
 	
 	// Método responsável pela leitura e validação de endereços de email.
 	// A validação é realizada por meio de expressões regulares, sem uso de bibliotecas externas.
