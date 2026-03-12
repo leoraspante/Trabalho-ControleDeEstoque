@@ -9,9 +9,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import model.services.ManageEmployeeService;
 import model.services.ManageSystemService;
-import view.console.SystemMenuMessages;
 
 public class Program {
 

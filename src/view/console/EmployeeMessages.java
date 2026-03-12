@@ -1,67 +1,70 @@
-/* Classe responsável por exibir mensagens relacionadas ao gerenciamento de funcionários,
-   incluindo menus de cadastro, consulta e confirmações de operações. */
-
 package view.console;
 
 public final class EmployeeMessages {
 
-    // Separador padronizado.
     private static final String SEPARATOR = "================================================================================================================================================";
 
-    // Menu de gerenciamento de funcionários
-    public static void printEmployeeMenu() {
+    private static void printCenteredTitle(String title) {
+        int totalWidth = SEPARATOR.length();
+        int padding = (totalWidth - title.length()) / 2;
         System.out.println(SEPARATOR);
-        System.out.println("                                     Gerenciamento de Funcionários                                      ");
-        System.out.println(SEPARATOR);
-        System.out.println();
-        System.out.println("Opções disponíveis:");
-        System.out.println("(1) Cadastrar novo funcionário");
-        System.out.println("(2) Consultar lista de funcionários");
-        System.out.println("(3) Voltar ao menu principal");
+        System.out.printf("%" + padding + "s%s%n", "", title);
         System.out.println(SEPARATOR);
         System.out.println();
     }
 
-    // Menu de cadastro de funcionários
-    public static void printEmployeeRegisterMenu() {
-        System.out.println(SEPARATOR);
-        System.out.println("                                     Cadastro de Novo Funcionário                                      ");
+    public static void printEmployeeMenu() {
+        printCenteredTitle("Gerenciamento de Funcionários");
+        System.out.println("Opções disponíveis:");
+        System.out.println("(1) Cadastrar novo funcionário.");
+        System.out.println("(2) Consultar lista de funcionários.");
+        System.out.println("(3) Alteraração de dados.");
+        System.out.println("(4) Voltar ao menu principal.");
         System.out.println(SEPARATOR);
         System.out.println();
+    }
+
+    public static void printEmployeeEditMenu() {
+        printCenteredTitle("Alteração de Dados");
+        System.out.println("Opções disponíveis:");
+        System.out.println("(1) Alterar nome.");
+        System.out.println("(2) Alterar email.");
+        System.out.println("(3) Alterar departamento.");
+        System.out.println("(4) Alterar data de nascimento.");
+        System.out.println("(5) Alterar data de contratação.");
+        System.out.println("(6) Sair do menu de alterações.");
+        System.out.println(SEPARATOR);
+        System.out.println();
+    }
+
+    public static void printNoIdFound() {
+        printCenteredTitle("ID Não Encontrado");
+    }
+
+    public static void printEmployeeRegisterMenu() {
+        printCenteredTitle("Cadastro de Novo Funcionário");
         System.out.println("Informe os dados necessários:");
         System.out.println(SEPARATOR);
         System.out.println();
     }
 
-    // Nenhum funcionário cadastrado
     public static void printNoEmployeesMessage() {
-        System.out.println(SEPARATOR);
-        System.out.println("                                     Nenhum Funcionário Cadastrado                                     ");
-        System.out.println(SEPARATOR);
-        System.out.println();
+        printCenteredTitle("Nenhum Funcionário Cadastrado");
     }
 
-    // Cabeçalho da lista de funcionários
     public static void printEmployeeListHeader() {
-        System.out.println(SEPARATOR);
-        System.out.println("                                     Lista de Funcionários Cadastrados                                 ");
-        System.out.println(SEPARATOR);
-        System.out.printf("%-5s | %-35s | %-35s | %-20s | %-20s | %-15s%n", "ID", "Nome", "Email", "Data de Nascimento", "Departamento", "Contatação");
+        printCenteredTitle("Funcionários Cadastrados");
+        System.out.printf("%-5s | %-35s | %-35s | %-20s | %-20s | %-15s%n",
+            "ID", "Nome", "Email", "Data de Nascimento", "Departamento", "Contatação");
         System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println();
     }
 
-    // Confirmação de cadastro
     public static void printEmployeeRegisteredMessage() {
-        System.out.println(SEPARATOR);
-        System.out.println("Cadastro de funcionário(s) realizado com sucesso!");
-        System.out.println(SEPARATOR);
+        printCenteredTitle("Cadastro de funcionário(s) realizado com sucesso!");
     }
 
-    // Confirmação de consulta
     public static void printEmployeeConsultedMessage() {
-        System.out.println(SEPARATOR);
-        System.out.println("Consulta realizada com sucesso!");
-        System.out.println(SEPARATOR);
+        printCenteredTitle("Consulta realizada com sucesso!");
     }
 }

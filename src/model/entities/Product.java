@@ -80,7 +80,7 @@ public class Product {
 		
 		// StringBuider formatando a exibição da lista.
 		StringBuilder sb = new StringBuilder();
-		sb.append(String.format("%-5s | %-25s | %-35s | %-15s | %-20s | %-10.2f", id, name, description, quantity, entryDate.format(fmt), value));
+		sb.append(String.format("%-5s | %-25s | %-35s | %-15s | %-20s | %-10.2f | %-10.2f", id, name, description, quantity, entryDate.format(fmt), value, getValue()*getQuantity()));
 		return sb.toString();
 	}
 	

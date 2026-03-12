@@ -6,6 +6,7 @@ package model.utils.input;
 import java.util.Scanner;
 
 import model.enums.Department;
+import model.enums.OperationType;
 
 public final class EnumInputUtils {
 
@@ -21,6 +22,22 @@ public final class EnumInputUtils {
 			catch(IllegalArgumentException e) {
 				System.out.printf("Departamento inexistente, tente novamente.%n");
 				System.out.printf("Opções válidas: ADMINISTRACAO, VENDAS, ESTOQUE, CONVIDADO.%n%n");
+			}
+		}
+	}
+	
+	// Método responsável pela leitura e validação das operações disponíveis no estoque.
+	public static OperationType readOperationType (Scanner sc) {
+		while(true) {
+			try {
+				System.out.print("Operação: ");
+				String input = sc.nextLine().trim().toUpperCase();
+				OperationType value = OperationType.valueOf(input);
+				return value;
+			}
+			catch(IllegalArgumentException e) {
+				System.out.printf("Operação inexistente, tente novamente.%n");
+				System.out.printf("Opções válidas: CADASTRO, BAIXA, AJUSTES.%n%n");
 			}
 		}
 	}
