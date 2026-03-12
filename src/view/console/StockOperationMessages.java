@@ -19,10 +19,19 @@ public final class StockOperationMessages {
 
     public static void printOperationsListHeader() {
         printCenteredTitle("Histórico de Movimentações de Estoque");
-        System.out.printf("%-5s | %-25s | %-10s | %-15s | %-20s | %-15s | %-15s | %-10s%n",
-            "ID", "Produto", "Operação", "Estoque Atual", "Data/Hora",
-            "Qtd Movimentada", "Preço Alterado", "Total R$");
+        System.out.printf(
+        		"%-5s | %-20s | %-10s | %-10s | %-20s | %15s | %15s | %-12s%n",
+        		"ID",
+        		"Produto",
+        		"Operação",
+        		"Estoque",
+        		"Data/Hora",
+        		"Qtd Movimentada",
+        		"Preço Alterado",
+        		"Total R$"
+        );
         System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println();
     }
+
 }

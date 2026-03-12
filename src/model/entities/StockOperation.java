@@ -102,7 +102,7 @@ public class StockOperation {
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append(String.format(
-			"%-5s | %-25s | %-10s | %-10s | %-20s | %-10s | %-10s | %-10.2f",
+			"%-5s | %-20s | %-10s | %-10s | %-20s | %-15s | %-15s | %-12.2f",
 			id,																			// ID da operação.
 			product.getName(),															// Nome do produto.
 			operation,																	// Tipo de operação (CADASTRO, BAIXA, AJUSTE).

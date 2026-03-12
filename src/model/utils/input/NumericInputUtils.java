@@ -99,7 +99,7 @@ public final class NumericInputUtils {
 				sc.nextLine();
 				if(value < minAllowed) {
 					System.out.printf("Valor inválido, tente novamente.%n");
-					System.out.printf("Valor mínimo permitido: %d.%n%n", minAllowed);
+					System.out.printf("Valor mínimo permitido: %.2f%n%n", minAllowed);
 				}
 				else {
 					return value;

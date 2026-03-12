@@ -238,7 +238,7 @@ public class ManageProductService {
 			// Menu de baixa do produto encontrado.
 			switch (NumericInputUtils.readIntegerInRange("Informe a opção desejada: ", sc, 1, 2)) {
 				case 1:
-					Integer quantityToRemove = NumericInputUtils.readIntegerInRange("Quantidade a ser baixada: ", sc , 1, productToEdit.getQuantity());
+					Integer quantityToRemove = NumericInputUtils.readIntegerInRange("Quantidade a ser baixada: ", sc , 0, productToEdit.getQuantity());
 					
 					// Subtrai a quantidade informada do estoque atual.
 					productToEdit.setQuantity(productToEdit.getQuantity() - quantityToRemove);
